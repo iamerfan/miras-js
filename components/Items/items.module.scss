@@ -1,0 +1,498 @@
+.main {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #f1f1f1;
+  padding: 1rem;
+
+  .Details {
+    background-color: white;
+    flex-grow: 1;
+    border-radius: 10px;
+    max-width: 70%;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    padding: 1rem 1rem 1rem 0.5rem;
+    direction: rtl;
+
+    .Images {
+      cursor: e-resize;
+      width: 50%;
+      padding: 1rem 1rem 0 2rem;
+      direction: ltr;
+      border-left: var(--border);
+      position: relative;
+      img {
+        border-radius: 10px;
+      }
+      .links {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        top: -0.5rem;
+        direction: rtl;
+        font-size: 0.8rem;
+        opacity: 0.8;
+        color: #04acee;
+        right: 0.5rem;
+
+        label {
+          color: #000;
+        }
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    .LeftDetails {
+      min-width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1rem;
+      padding-right: 1rem;
+
+      .tabs {
+        border-bottom: var(--border);
+        padding-bottom: 1rem;
+
+        .TabSlider {
+          width: 100%;
+        }
+
+        .tab {
+          width: 30% !important;
+          padding: 0.5rem 1rem;
+          border-radius: 10px;
+          background-color: #f1f1f1;
+          white-space: nowrap;
+          text-align: center;
+          flex-grow: 1;
+          transition: 0.2s;
+
+          &.active {
+            color: #fff;
+            transition: 0.2s;
+            background-color: rgba(255, 0, 0, 0.7);
+            width: 35% !important;
+          }
+        }
+      }
+
+      .Data {
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      .Features {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        position: relative;
+        max-height: 400px;
+        min-height: 400px;
+        overflow-y: auto;
+
+        .Feature {
+          display: flex;
+          margin-left: 0.5rem;
+          font-size: 1rem;
+          text-align: center;
+
+          .name {
+            background-color: #f1f1f1c4;
+            min-width: 30%;
+            white-space: nowrap;
+            text-align: center;
+            padding: 0.5rem;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+
+          .data {
+            padding: 0.5rem 1rem;
+            min-width: 15%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 2px solid #f1f1f1c4;
+            margin-left: 2rem;
+            width: 100%;
+            &.tag {
+              color: #04acee;
+              font-size: 0.8rem;
+            }
+          }
+
+          hr {
+            border: 5px solid #f1f1f1;
+            border-radius: 10px;
+            flex-grow: 1;
+            align-self: center;
+            justify-self: center;
+            height: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .LeftPanel {
+    position: relative;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+
+    .OrderPanel {
+      width: 100%;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1rem 1rem;
+      gap: 1rem;
+
+      .title {
+        font-size: 0.8rem;
+        opacity: 0.8;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        white-space: nowrap;
+
+        svg {
+          font-size: 1rem;
+          opacity: 0.8;
+        }
+      }
+
+      .top {
+        direction: rtl;
+        font-size: 0.9rem;
+        border-bottom: var(--border);
+        padding-bottom: 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+          color: #ff4c4c;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+
+        .Left {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          .quentity {
+            font-size: 0.8rem;
+            color: rgb(85, 84, 84);
+            border: 1px solid rgba(95, 91, 91, 0.137);
+            border-radius: 10px;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+        }
+      }
+
+      .colors {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        direction: rtl;
+
+        .color {
+          border-radius: 50%;
+          border: var(--border);
+          padding: 0.7rem;
+        }
+
+        .ActiveColor {
+          padding: 0.3rem 0.5rem;
+          min-width: 80px;
+          max-width: 80px;
+          border-radius: 10px;
+          border: var(--border);
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin: 0 0.5rem 0 0;
+          position: relative;
+
+          .inside {
+            border-radius: 50%;
+            padding: 0.7rem;
+            border: 1px solid var(--border-color);
+          }
+
+          label {
+            font-size: 0.8rem;
+          }
+        }
+
+        .OtherColors {
+          display: flex;
+          align-items: center;
+          gap: 0.1rem;
+          border-right: 1px solid var(--border-color);
+          padding: 0 0.3rem;
+        }
+      }
+
+      .sizes {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 0.5rem;
+
+        .ActiveSize {
+          padding: 0.3rem 0.5rem;
+          border-radius: 10px;
+          border: var(--border);
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.8rem;
+          white-space: nowrap;
+          direction: rtl;
+
+          .size {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            border: var(--border);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        .OtherSizes {
+          display: flex;
+          align-items: center;
+          gap: 0.2rem;
+          border-right: var(--border);
+          padding-right: 0.5rem;
+        }
+
+        .size {
+          height: 25px;
+          width: 25px;
+          border-radius: 50%;
+          border: var(--border);
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          font-weight: bold;
+          opacity: 0.8;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .Prices {
+        display: flex;
+        direction: rtl;
+        flex-direction: column;
+        gap: 1rem;
+
+        .oldPrice {
+          .data {
+            color: #000;
+
+            p {
+              text-decoration: line-through;
+            }
+          }
+        }
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .data {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: rgba(255, 0, 0, 0.7);
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            i {
+              font-size: 0.7rem;
+              font-style: normal;
+            }
+          }
+        }
+      }
+
+      .OrderButton {
+        padding: 0.5rem 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: rgba(255, 0, 0, 0.7);
+        border-radius: 10px;
+
+        &.isInCart {
+          background-color: gray;
+        }
+
+        &:disabled {
+          background-color: gray;
+        }
+
+        svg {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    .ShippingAd {
+      width: 100%;
+      background-color: rgb(252, 168, 168);
+      border-radius: 10px;
+      height: 100px;
+    }
+
+    .Rules {
+      padding: 0.5rem;
+      background-color: #fff;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .CollapsedBtn {
+      border: none;
+      display: none;
+      align-items: center;
+      gap: 0.2rem;
+      color: #000;
+      direction: rtl;
+    }
+
+    .CollapesedContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      &.active {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .main {
+    position: relative;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .LeftPanel {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100vw !important;
+
+    .ShippingAd,
+    .Rules {
+      display: none;
+    }
+
+    .OrderPanel {
+      gap: 0.2rem !important;
+
+      .top {
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+        padding: 0.2rem 0 !important;
+
+        .Left {
+          .CollapsedBtn {
+            display: flex !important;
+          }
+
+          label {
+            display: none !important;
+          }
+        }
+      }
+
+      .Prices {
+        gap: 0.2rem !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        .title {
+          font-size: 0.7rem !important;
+          opacity: 0.6 !important;
+        }
+        .data {
+          gap: 0.2rem !important;
+        }
+        .oldPrice {
+          .data {
+            font-size: 0.9rem !important;
+            opacity: 0.5 !important;
+          }
+        }
+
+        .discount {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  .Details {
+    max-width: 100% !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    max-height: unset !important;
+    .LeftDetails {
+      padding: 0 !important;
+      .Features {
+        .Feature {
+          margin-left: unset !important;
+          .data {
+            margin-left: unset !important;
+          }
+        }
+      }
+      .tab {
+        padding: 0.5rem !important;
+      }
+    }
+
+    .Images {
+      width: 100% !important;
+      border-left: none !important;
+    }
+  }
+}

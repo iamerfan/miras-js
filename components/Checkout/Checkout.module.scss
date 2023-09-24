@@ -1,0 +1,264 @@
+.Checkout {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  flex-direction: row-reverse;
+  min-height: 64vh;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-light);
+
+  .CheckoutPanel,
+  .PricePanel {
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-light);
+    border: var(--border);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  .CheckoutPanel {
+    text-align: right;
+    position: relative;
+    padding: 0rem 1rem 0.5rem 1rem;
+    direction: rtl;
+    width: 70%;
+    .top {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+      justify-content: space-between;
+      label {
+        background-color: rgba(250, 186, 186, 0.445);
+        padding: 0.2rem 1rem;
+        border-radius: 10px;
+        color: red;
+        font-size: 0.8rem;
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        .close {
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            height: 20px;
+            width: 20px;
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+  p {
+    opacity: 0.8;
+    padding-bottom: 0.5rem;
+    margin-top: -0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.5rem;
+  }
+  .Empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: white;
+  }
+  .CheckoutSlider {
+    padding-bottom: 4rem;
+  }
+  .PricePanel {
+    width: 30%;
+    padding: 1rem;
+    direction: rtl;
+    gap: 1.5rem;
+    .Top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        opacity: 0.7;
+      }
+      .status {
+        background-color: rgba(250, 186, 186, 0.445);
+        padding: 0.2rem 1rem;
+        border-radius: 10px;
+        color: red;
+        font-size: 0.8rem;
+      }
+    }
+    .Prices {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .TotalPrice,
+      .Discount,
+      .Price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 0.8rem;
+        opacity: 0.8;
+      }
+      .data {
+        font-size: 0.9rem;
+        background-color: rgba(250, 186, 186, 0.445);
+        padding: 0.2rem 1rem;
+        border-radius: 10px;
+        color: red;
+        display: flex;
+        align-items: center;
+        label {
+          &:last-of-type {
+            padding-right: 0.5rem;
+            border-right: solid;
+          }
+          &:first-of-type {
+            padding-left: 0.5rem;
+          }
+        }
+        i {
+          padding-right: 0.5rem;
+          font-style: normal;
+          font-size: 0.8rem;
+          opacity: 0.8;
+        }
+      }
+    }
+    .PaymentMethod {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 0.5rem;
+      label {
+        font-weight: bold;
+      }
+      .Payment {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .activePM {
+        border: solid 2px gray;
+        border-radius: 10px;
+        transition: 0.2s;
+        width: 50px !important;
+        height: 50px !important;
+      }
+    }
+    .PaymentButton {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      background-color: var(--Red);
+      border: var(--border);
+      box-shadow: var(--box-shadow);
+      border-radius: 10px;
+      color: #fff;
+      padding: 0.7rem 1rem;
+      position: relative;
+
+      label {
+        font-size: 1rem;
+      }
+
+      &.compelete {
+        background-color: gray !important;
+      }
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+    .CollapsBtn {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Checkout {
+    position: relative;
+    padding: 1rem 0 !important;
+    box-shadow: none !important;
+    min-height: 55vh !important;
+  }
+  .CheckoutPanel {
+    width: 100% !important;
+    p {
+      display: none;
+    }
+  }
+  .PricePanel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    gap: 1rem !important;
+    min-width: 100vw;
+    .CollapsBtn {
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-content: flex-end !important;
+      font-size: 0.8rem;
+      .title {
+        display: none;
+      }
+    }
+    &.active {
+      .CollapsBtn {
+        justify-content: space-between !important;
+        .title {
+          display: flex;
+        }
+      }
+      .Top {
+        display: none;
+      }
+      .PaymentMethod {
+        display: none;
+      }
+      .Price {
+        display: none !important;
+      }
+      .FullPrice {
+        display: flex !important ;
+      }
+    }
+    h3 {
+      display: none;
+    }
+    .Prices {
+      .TotalPrice,
+      .Discount {
+        display: none !important;
+      }
+      .Price {
+        .title,
+        .data {
+          font-size: 0.8rem !important;
+        }
+      }
+    }
+    .details {
+      display: none;
+    }
+  }
+}
