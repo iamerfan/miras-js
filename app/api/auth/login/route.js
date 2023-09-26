@@ -1,6 +1,6 @@
 import { ConnectToDatabase, Res } from "@/lib/db";
 import { NextRequest } from "next/server";
-
+export const runtime = "edge";
 export async function POST(req) {
   const data = await req.json();
   if (!data) if (!data) return Res("اشکال در دریافت اطلاعات کاربر", 403);

@@ -1,7 +1,7 @@
 import { ConnectToDatabase, Res } from "@/lib/db";
 import { getSearchParams } from "@/lib/hooks/getSearchParams";
 import { NextRequest } from "next/server";
-
+export const runtime = "edge";
 export async function POST(req) {
   const { user, cart } = await req.json();
   const { connect, close, db } = await ConnectToDatabase();

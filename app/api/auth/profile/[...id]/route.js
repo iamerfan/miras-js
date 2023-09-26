@@ -1,6 +1,6 @@
 import { ConnectToDatabase, Res } from "@/lib/db";
 import { ObjectId } from "mongodb";
-
+export const runtime = "edge";
 export async function GET(req, { params }) {
   const { id } = params;
   console.log(id);

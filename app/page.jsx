@@ -6,12 +6,11 @@ import CategoryOffer from "@/components/Home/CategoryOffer";
 import Brands from "@/components/Home/Brands";
 import Rules from "@/components/Home/Rules";
 import Items from "@/components/Home/Items";
-import axios from "axios";
-import { server } from "@/lib/config";
 import Blogs from "@/components/Home/Blogs";
+import { server } from "@/lib/config";
 
 export default async function Home() {
-  const data = await axios.get(`${server}/api/home`).then((res) => res.data);
+  const data = await fetch(`${server}/api/home`).then((res) => res.json());
 
   const menItems = data.filter((item) => item.category[0].id === 1);
   const womenItems = data.filter((item) => item.category[0].id === 2);

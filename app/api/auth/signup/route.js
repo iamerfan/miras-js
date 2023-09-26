@@ -1,5 +1,5 @@
 import { ConnectToDatabase, Res } from "@/lib/db";
-
+export const runtime = "edge";
 export async function POST(req) {
   const data = await req.json();
   const { db, close, connect } = await ConnectToDatabase();

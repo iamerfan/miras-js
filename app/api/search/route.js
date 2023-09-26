@@ -1,7 +1,7 @@
 import { ConnectToDatabase, Res } from "@/lib/db";
 import { handleQuery } from "@/lib/hooks/handleQuery";
 import queryString from "query-string";
-
+export const runtime = "edge";
 export async function GET(req) {
   // Extract the URL and query parameters from the request object
   const { href } = new URL(req.url);

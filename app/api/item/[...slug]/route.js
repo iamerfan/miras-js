@@ -1,5 +1,5 @@
 import { ConnectToDatabase, Res } from "@/lib/db";
-
+export const runtime = "edge";
 export async function GET(req) {
   const { pathname } = new URL(req.url);
   const id = handleSlug(pathname, "item/");

@@ -1,6 +1,6 @@
 import { Res } from "@/lib/db";
 import fs from "fs";
-
+export const runtime = "edge";
 export async function POST(req) {
   try {
     const formData = await req.formData();

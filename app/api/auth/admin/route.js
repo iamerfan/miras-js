@@ -1,5 +1,5 @@
 import { ConnectToDatabase, Res } from "@/lib/db";
-
+export const runtime = "edge";
 export async function POST(req) {
   const { item } = await req.json();
   if (!item) return Res("Error in receiving product information", 403);
