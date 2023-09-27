@@ -2,7 +2,7 @@ import Details from "@/components/Items/Details";
 import LeftPanel from "@/components/Items/LeftPanel";
 import styles from "@/components/Items/items.module.scss";
 import { server } from "@/lib/config";
-export const runtime = "edge";
+
 export default async function Item({ params }) {
   const data = await getData(params.slug[0]);
 

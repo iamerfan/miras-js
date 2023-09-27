@@ -1,6 +1,6 @@
 import { server } from "@/lib/config";
 import SearchContainer from "@/components/Search/SearchContainer";
-export const runtime = "edge";
+
 async function handleData(searchParams) {
   const params = new URLSearchParams();
   Object.entries(searchParams).forEach(([key, value]) => {

@@ -80,6 +80,7 @@ export default function Admin() {
 
     const handleUpload = async () => {
       const formData = handleForm();
+      console.log(formData);
       const uploadRes = await axios
         .post(`${server}/api/auth/admin/upload`, formData)
         .then((res) => res.data);
