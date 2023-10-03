@@ -5,11 +5,11 @@ import { server } from "@/lib/config";
 
 const getData = async (id) => {
   try {
-    const res = await fetch(`${server}/api/auth/profile/${id}`, {
-      cache: "no-cache",
-    });
-    return res.json();
-  } catch (error) {}
+    const res = await axios.get(`${server}/api/auth/profile/${id}`);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export default async function Profile({ params }) {
