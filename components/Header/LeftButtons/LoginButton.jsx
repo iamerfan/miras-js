@@ -48,8 +48,8 @@ export default function LoginButton() {
           <Image alt="" src={"/user.jpg"} width={70} height={70} />
           <label className={styles.email}>{user.email}</label>
         </div>
-        <Link href={`/profile/${user.id}`}>اطلاعات کاربری</Link>
-        <Link href={`/history/${user.id}`}>سابقه سفارشات</Link>
+        <Link href={`/profile/${user._id}`}>اطلاعات کاربری</Link>
+        <Link href={`/history/${user._id}`}>سابقه سفارشات</Link>
         <button onClick={signOut} className={styles.signoutButton}>
           خروج
         </button>
