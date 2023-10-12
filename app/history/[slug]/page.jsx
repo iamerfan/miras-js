@@ -2,7 +2,9 @@ import History from "@/components/History";
 import { server } from "@/lib/config";
 
 const data = async (id) => {
-  const result = await fetch(`${server}/api/order/?id=${id}`);
+  const result = await fetch(`${server}/api/order/?id=${id}`, {
+    cache: "no-cache",
+  });
   return result.json();
 };
 

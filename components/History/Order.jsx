@@ -15,13 +15,15 @@ export default function Order({ data, length }) {
 export function OrderItem({ data, length }) {
   return (
     <div className={styles.OrderItem}>
-      <Image
-        className={styles.img}
-        src={data.img || data.imgs[0]}
-        alt=""
-        width={200}
-        height={300}
-      />
+      <div className={styles.img}>
+        <Image
+          className={styles.img}
+          src={data.img || data.imgs[0]}
+          alt=""
+          width={200}
+          height={300}
+        />
+      </div>
       <div className={styles.Details}>
         <div className={styles.Top}>
           <label className={styles.Count}>{length} محصول</label>

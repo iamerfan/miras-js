@@ -62,10 +62,15 @@
           }
           .OrderItem {
             display: flex;
-            img {
-              border-top-right-radius: 10px;
-              border-bottom-right-radius: 10px;
-              height: 100% !important;
+            min-height: 300px;
+            .img {
+              min-width: 40% !important;
+              img {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                height: 100% !important;
+                object-fit: fill !important;
+              }
             }
             .Details {
               display: flex;
