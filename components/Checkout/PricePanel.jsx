@@ -30,7 +30,6 @@ export default function PricePanel() {
   const dispatch = useDispatch();
   const isValid = useUserValidation();
   const isLogged = user.email ? true : false;
-  console.log(user, cart);
   const allPrices = cart.map((item) => {
     return { ...item.prices[0], quantity: item.quantity };
   });

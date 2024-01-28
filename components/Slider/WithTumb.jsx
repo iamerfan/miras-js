@@ -1,6 +1,5 @@
 "use client";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
-import { Options } from "@splidejs/splide";
 import Image from "next/image";
 
 import React, { useEffect, useRef } from "react";
@@ -35,7 +34,7 @@ export default function WithTumb({ data }) {
   };
   const renderThumbs = () => {
     return data.map((slide, i) => (
-      <SplideSlide key={i}>
+      <SplideSlide key={i} className={styles.thumb}>
         <Image src={slide} alt={""} width={400} height={300} />
       </SplideSlide>
     ));
@@ -47,15 +46,14 @@ export default function WithTumb({ data }) {
     gap: "1rem",
     perMove: 1,
     pagination: false,
-    height: "20rem",
-
-    width: 340,
+    height: "25rem",
+    direction: "rtl",
+    width: "100%",
     breakpoints: {
       300: {
         width: "100vw",
       },
     },
-    focus: "center",
   };
 
   const thumbsOptions = {
@@ -63,8 +61,9 @@ export default function WithTumb({ data }) {
     rewind: true,
     gap: "1rem",
     pagination: false,
-    fixedWidth: 100,
-    fixedHeight: 120,
+    direction: "rtl",
+    fixedWidth: 120,
+    fixedHeight: 100,
     arrows: false,
     cover: true,
     focus: "center",

@@ -11,41 +11,43 @@ export default function Item({ animated, data, className }) {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
-        <Link
-          href={`/item/${data.id}`}
-          className={`${styles.Item} ${className}`}
-        >
-          {data.prices[0].discount > 0 && (
-            <div className={styles.Top}>
-              <label className={styles.Offer}>
-                {data.discountPercent}
-                {data.prices[0].discount}%
-              </label>
-            </div>
-          )}
-
-          <div className={styles.Main}>
-            <Image alt="" src={data.imgs[0]} fill />
-          </div>
-          <div className={styles.Bottom}>
-            <label className={styles.category}>
-              {data?.category ? data?.category[0].name : "بدون دسته بندی"}
-            </label>
-            <label className={styles.title}>{data.name}</label>
-            <div className={styles.Prices}>
-              {data.prices[0].oldPrice !== data.prices[0].newPrice && (
-                <label className={styles.OldPrice}>
-                  {Number(data?.prices[0].oldPrice).toLocaleString()}{" "}
-                  <i>تومان</i>
-                </label>
-              )}
-              <label className={styles.NewPrice}>
-                {Number(data?.prices[0].newPrice).toLocaleString()} <i>تومان</i>
-              </label>
-            </div>
-          </div>
-        </Link>
+        <ItemContainer data={data} className={className} />
       </motion.div>
     );
-  return <div className={styles.Item}></div>;
+  return <ItemContainer data={data} className={className} />;
+}
+
+function ItemContainer({ data, className }) {
+  return (
+    <Link href={`/item/${data.id}`} className={`${styles.Item} ${className}`}>
+      {data.prices[0].discount > 0 && (
+        <div className={styles.Top}>
+          <label className={styles.Offer}>
+            {data.discountPercent}
+            {data.prices[0].discount}%
+          </label>
+        </div>
+      )}
+
+      <div className={styles.Main}>
+        <Image alt="" src={data.imgs[0]} fill />
+      </div>
+      <div className={styles.Bottom}>
+        <label className={styles.category}>
+          {data?.category ? data?.category[0].name : "بدون دسته بندی"}
+        </label>
+        <label className={styles.title}>{data.name}</label>
+        <div className={styles.Prices}>
+          {data.prices[0].oldPrice !== data.prices[0].newPrice && (
+            <label className={styles.OldPrice}>
+              {Number(data?.prices[0].oldPrice).toLocaleString()} <i>تومان</i>
+            </label>
+          )}
+          <label className={styles.NewPrice}>
+            {Number(data?.prices[0].newPrice).toLocaleString()} <i>تومان</i>
+          </label>
+        </div>
+      </div>
+    </Link>
+  );
 }

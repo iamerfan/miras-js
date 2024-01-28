@@ -14,11 +14,13 @@
     display: flex;
     padding: 1rem 1rem 1rem 0.5rem;
     direction: rtl;
-
+    .thumb {
+      border-radius: 10px;
+    }
     .Images {
       cursor: e-resize;
       width: 50%;
-      padding: 1rem 1rem 0 2rem;
+      padding: 1rem 0 0 1rem;
       direction: ltr;
       border-left: var(--border);
       position: relative;
@@ -54,6 +56,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      height: 100%;
       gap: 1rem;
       padding-right: 1rem;
 
@@ -78,14 +81,14 @@
           &.active {
             color: #fff;
             transition: 0.2s;
-            background-color: rgba(255, 0, 0, 0.7);
+            background-color: rgb(241, 45, 88);
             width: 35% !important;
           }
         }
       }
 
       .Data {
-        max-height: 400px;
+        max-height: 500px;
         overflow-y: auto;
       }
 
@@ -95,8 +98,7 @@
         gap: 1.5rem;
         width: 100%;
         position: relative;
-        max-height: 400px;
-        min-height: 400px;
+        flex-grow: 1;
         overflow-y: auto;
 
         .Feature {
@@ -187,7 +189,7 @@
         justify-content: space-between;
 
         .title {
-          color: #ff4c4c;
+          color: rgb(241, 45, 88);
           font-weight: bold;
           font-size: 1.2rem;
         }
@@ -314,6 +316,7 @@
         direction: rtl;
         flex-direction: column;
         gap: 1rem;
+        font-family: Shabnam;
 
         .oldPrice {
           .data {
@@ -333,7 +336,7 @@
           .data {
             font-size: 1.2rem;
             font-weight: bold;
-            color: rgba(255, 0, 0, 0.7);
+            color: rgb(241, 45, 88);
             padding: 0.2rem 0.5rem;
             border-radius: 10px;
             display: flex;
@@ -355,7 +358,7 @@
         align-items: center;
         justify-content: center;
         color: #fff;
-        background-color: rgba(255, 0, 0, 0.7);
+        background-color: rgb(241, 45, 88);
         border-radius: 10px;
 
         &.isInCart {
@@ -417,6 +420,7 @@
 
   .LeftPanel {
     position: fixed !important;
+    z-index: 3;
     bottom: 0;
     left: 0;
     width: 100vw !important;
@@ -492,6 +496,7 @@
 
     .Images {
       width: 100% !important;
+      max-width: 450px !important;
       border-left: none !important;
     }
   }

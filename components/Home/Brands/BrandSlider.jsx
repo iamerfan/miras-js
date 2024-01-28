@@ -10,7 +10,12 @@ export default function BrandSlider() {
   return (
     <Slider
       className={styles.BrandContainer}
-      options={{ arrows: true, pagination: false, autoplay: false }}
+      options={{
+        arrows: true,
+        pagination: false,
+        autoplay: false,
+        direction: "rtl",
+      }}
     >
       {brands.map((brands, i) => (
         <Slide key={i} className={styles.Slide}>

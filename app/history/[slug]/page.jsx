@@ -1,11 +1,10 @@
 import History from "@/components/History";
 import { server } from "@/lib/config";
+import axios from "axios";
 
 const data = async (id) => {
-  const result = await fetch(`${server}/api/order/?id=${id}`, {
-    cache: "no-cache",
-  });
-  return result.json();
+  const result = await axios.get(`${server}/api/order/?id=${id}`);
+  return result.data;
 };
 
 const HistoryPanel = async ({ params }) => {

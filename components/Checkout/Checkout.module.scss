@@ -70,7 +70,7 @@
     background-color: white;
   }
   .CheckoutSlider {
-    padding-bottom: 4rem;
+    padding: 2rem 0;
   }
   .PricePanel {
     width: 30%;
@@ -199,6 +199,9 @@
     padding: 1rem 0 !important;
     box-shadow: none !important;
     min-height: 55vh !important;
+  }
+  .CheckoutSlider {
+    padding: 0 !important;
   }
   .CheckoutPanel {
     width: 100% !important;

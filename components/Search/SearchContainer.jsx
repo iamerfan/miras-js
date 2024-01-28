@@ -53,7 +53,6 @@ export default function SearchContainer({ data }) {
         `${server}/api/search?q=${query === value ? query : value}`
       );
       setFilteredData(response.data);
-      console.log(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {

@@ -48,7 +48,7 @@ export const categories = [
     href: "/search?category=5",
   },
   {
-    label: "زیبایی و سلامت",
+    label: "زیبایی",
     image: "/categories/skin.png",
     icon: <MdHealthAndSafety />,
     index: 6,

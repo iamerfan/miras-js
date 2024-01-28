@@ -1,8 +1,8 @@
 .Item {
   position: relative;
   direction: rtl;
-  min-width: 220px;
-  max-width: 220px;
+  min-width: 300px;
+  max-width: 300px;
   flex-grow: 1;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
@@ -27,7 +27,8 @@
       color: #fff;
       padding: 0.2rem 0.5rem;
       border-radius: 10px;
-      background-color: #f74d4d;
+      background-color: rgb(241, 45, 88);
+      font-family: Shabnam;
     }
 
     svg {
@@ -39,6 +40,7 @@
 
   .Bottom {
     min-height: 30%;
+    flex-grow: 1;
     width: 100%;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -46,6 +48,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     gap: 0.3rem;
     padding: 0.5rem 0 0.5rem 0.5rem;
     direction: rtl;
@@ -60,17 +63,19 @@
       text-align: center;
       font-weight: bold;
       padding: 0 1.39rem;
-      font-size: 0.8rem;
+      font-size: 1rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 250px;
+      max-width: 270px;
       min-height: 20px;
     }
     .Prices {
       display: flex;
       align-items: center;
       flex-direction: column;
+      font-family: Shabnam;
+
       .OldPrice {
         direction: rtl;
         opacity: 0.6;
@@ -79,7 +84,8 @@
       }
 
       .NewPrice {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
         color: #f02424;
         direction: rtl;
 
@@ -98,8 +104,9 @@
 
   .Main {
     position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    min-height: 200px !important;
+    max-height: 200px !important;
     flex-grow: 1;
     img {
       border-top-right-radius: 10px;

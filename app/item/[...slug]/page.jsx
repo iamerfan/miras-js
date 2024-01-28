@@ -2,6 +2,7 @@ import Details from "@/components/Items/Details";
 import LeftPanel from "@/components/Items/LeftPanel";
 import styles from "@/components/Items/items.module.scss";
 import { server } from "@/lib/config";
+import axios from "axios";
 
 export default async function Item({ params }) {
   const data = await getData(params.slug[0]);
@@ -16,6 +17,6 @@ export default async function Item({ params }) {
 
 async function getData(params) {
   const url = `${server}/api/item/${params}`;
-  const res = await fetch(url);
-  return res.json();
+  const res = await axios.get(url);
+  return res.data;
 }

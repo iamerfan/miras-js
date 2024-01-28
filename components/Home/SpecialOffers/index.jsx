@@ -2,7 +2,7 @@ import styles from "@/components/Home/Home.module.scss";
 import SpecialSlider from "./SpecialSlider";
 import Timer from "./Timer";
 
-export default function SpecialOffers({ data }: { data: any }) {
+export default function SpecialOffers({ data }) {
   return (
     <div className={styles.SpecialOffers}>
       <div className={styles.title}>

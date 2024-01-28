@@ -6,15 +6,13 @@ import Slide from "../Slider/Slide";
 import Order from "./Order";
 
 export default function OrdersContainer({ orders }) {
-  console.log(orders);
-
   return (
     <Slider
-      className={styles.Orders}
+      className={`Orders ${styles.Orders}`}
       options={{
         arrows: false,
         direction: "rtl",
-        pagination: true,
+        pagination: false,
         gap: "1rem",
         dragMinThreshold: 30,
         breakpoints: {

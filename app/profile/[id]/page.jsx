@@ -13,6 +13,6 @@ const getData = async (id) => {
 };
 
 export default async function Profile({ params }) {
-  const data = await getData(params.slug);
+  const data = await getData(params.id);
   return <ProfilePanel {...data} />;
 }
