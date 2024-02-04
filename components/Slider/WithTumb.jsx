@@ -7,6 +7,7 @@ import "@splidejs/react-splide/css";
 import styles from "@/components/Items/items.module.scss";
 import { RxCaretRight } from "react-icons/rx";
 import { server } from "@/lib/config";
+import LazyImg from "../LazyImg";
 
 export default function WithTumb({ data }) {
   const mainRef = React.createRef();
@@ -27,7 +28,7 @@ export default function WithTumb({ data }) {
           href={`${server}/${slide}`}
           rel="noopener noreferrer"
         >
-          <Image src={slide} alt={""} fill />
+          <LazyImg src={slide} alt={""} fill />
         </a>
       </SplideSlide>
     ));
@@ -35,7 +36,7 @@ export default function WithTumb({ data }) {
   const renderThumbs = () => {
     return data.map((slide, i) => (
       <SplideSlide key={i} className={styles.thumb}>
-        <Image src={slide} alt={""} width={400} height={300} />
+        <LazyImg src={slide} alt={""} width={400} height={300} />
       </SplideSlide>
     ));
   };

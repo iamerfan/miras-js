@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SplideSlide } from "@splidejs/react-splide";
 import Link from "next/link";
 import styles from "../Home.module.scss";
+import LazyImg from "@/components/LazyImg";
 
 const HomeSlide = ({ item }) => {
   return (
@@ -13,14 +14,7 @@ const HomeSlide = ({ item }) => {
         transition={{ delay: 1 * 0.1 }}
       >
         <Link href={"/search?c=1"}>
-          <Image
-            priority
-            sizes="(max-width: 768px) 100vw"
-            loading="eager"
-            alt=""
-            src={`/home/${item}`}
-            fill
-          />
+          <LazyImg priority alt="" src={`/home/${item}`} />
         </Link>
       </motion.div>
     </SplideSlide>

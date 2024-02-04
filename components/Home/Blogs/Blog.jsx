@@ -1,6 +1,5 @@
 import styles from "@/components/Home/Home.module.scss";
-import Image from "next/image";
-
+import LazyImg from "@/components/LazyImg";
 import Link from "next/link";
 
 export default function Blog({ data }) {
@@ -9,7 +8,7 @@ export default function Blog({ data }) {
       <label className={`${data.position === "right" && styles.right}`}>
         {data.title}
       </label>
-      <Image alt="" fill src={data.img} />
+      <LazyImg src={data.img} className={styles.BlogImg} />
     </Link>
   );
 }

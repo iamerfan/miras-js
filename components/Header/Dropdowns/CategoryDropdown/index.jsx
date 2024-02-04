@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import LazyImg from "@/components/LazyImg";
 
 export default function CategoryDropdown({ isActive, handleClick }) {
   const [categoryIndex, setCategoryIndex] = useState(1);
@@ -55,7 +56,7 @@ export default function CategoryDropdown({ isActive, handleClick }) {
                 key={i}
                 className={styles.ImageContainer}
               >
-                <Image fill alt="" src={img} />
+                <LazyImg src={img} />
                 <button className={styles.SeeButton}>
                   <Link href={`/search?c=${i + 1}`}>
                     <ArrowLeft />

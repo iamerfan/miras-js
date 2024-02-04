@@ -2,6 +2,7 @@ import styles from "./Item.module.scss";
 import { motion } from "framer-motion";
 import Image from "@/components/Image";
 import Link from "next/link";
+import LazyImg from "../LazyImg";
 
 export default function Item({ animated, data, className }) {
   if (animated)
@@ -30,7 +31,7 @@ function ItemContainer({ data, className }) {
       )}
 
       <div className={styles.Main}>
-        <Image alt="" src={data.imgs[0]} fill />
+        <LazyImg alt="" src={data.imgs[0]} />
       </div>
       <div className={styles.Bottom}>
         <label className={styles.category}>

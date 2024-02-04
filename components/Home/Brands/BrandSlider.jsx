@@ -4,7 +4,7 @@ import Slider from "@/components/Slider";
 import Slide from "@/components/Slider/Slide";
 import { motion } from "framer-motion";
 import { brands } from "@/lib/data";
-import Image from "next/image";
+import LazyImg from "@/components/LazyImg";
 
 export default function BrandSlider() {
   return (
@@ -25,7 +25,7 @@ export default function BrandSlider() {
             transition={{ delay: 0.5 }}
             className={styles.Brand}
           >
-            <Image alt="" fill src={brands.image} />
+            <LazyImg src={brands.image} />
           </motion.div>
         </Slide>
       ))}

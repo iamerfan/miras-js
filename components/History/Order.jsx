@@ -4,6 +4,7 @@ import styles from "@/components/History/History.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowLeft } from "react-icons/bs";
+import LazyImg from "../LazyImg";
 
 export default function Order({ data, length }) {
   return (
@@ -16,13 +17,7 @@ export function OrderItem({ data, length }) {
   return (
     <div className={styles.OrderItem}>
       <div className={styles.img}>
-        <Image
-          className={styles.img}
-          src={data.img || data.imgs[0]}
-          alt=""
-          width={200}
-          height={300}
-        />
+        <LazyImg className={styles.img} src={data.img || data.imgs[0]} />
       </div>
       <div className={styles.Details}>
         <div className={styles.Top}>

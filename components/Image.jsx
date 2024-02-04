@@ -5,20 +5,16 @@ export default function ImageComponent({
   alt = "",
   src,
   width,
-  fill = false,
-  priority = false,
-  quality = 80,
   height,
+  priority,
   sizes = "(max-width: 768px) 100vw",
 }) {
   return (
-    <Image
+    <img
       alt={alt}
       src={src}
-      quality={quality}
-      priority={priority}
+      fetchPriority={priority ? "high" : "auto"}
       sizes={sizes}
-      fill={fill}
       width={width}
       height={height}
     />

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { Decrease, Increase, RemoveFromCart } from "@/redux/Cart";
 import Link from "next/link";
+import LazyImg from "@/components/LazyImg";
 
 export default function CartItem({ data }) {
   const price = data.prices[0].newPrice;
@@ -15,7 +16,7 @@ export default function CartItem({ data }) {
     <>
       <div className={styles.CartItem}>
         <Link href={`/item/${data.id}`}>
-          <Image
+          <LazyImg
             src={data.img || data.imgs[0]}
             width={180}
             height={250}
